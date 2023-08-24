@@ -1,7 +1,7 @@
 extends RefCounted
 class_name CharacterFactory
 
-enum CharacterType {RAPTOR,ANKY,T_REX}
+enum CharacterType {RAPTOR,ANKY,REX}
 
 
 func generate_character(type: CharacterType) -> Character:
@@ -10,6 +10,8 @@ func generate_character(type: CharacterType) -> Character:
 	match type:
 		CharacterType.RAPTOR:
 			character = Raptor.new()
+		CharacterType.REX:
+			character = Rex.new()
 	
 	return character
 

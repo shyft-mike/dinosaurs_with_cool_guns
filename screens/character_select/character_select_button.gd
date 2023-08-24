@@ -11,6 +11,12 @@ func init(character_in: Character):
 	
 	$Label.text = character.name
 	$TextureRect.texture = character.icon
+	
+	if not character.is_selectable:
+		disabled = true
+		focus_mode = Control.FOCUS_NONE
+		
+		$TextureRect.modulate = Color.DIM_GRAY
 
 
 func _on_pressed():
